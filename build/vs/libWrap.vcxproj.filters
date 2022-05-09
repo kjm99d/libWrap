@@ -36,12 +36,18 @@
     <ClInclude Include="..\..\src\wrap_file.h">
       <Filter>헤더 파일\wrap_sys</Filter>
     </ClInclude>
+    <ClInclude Include="wrap_security.h">
+      <Filter>헤더 파일\wrap_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\wrap_image.cpp">
       <Filter>소스 파일\wrap_image</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\wrap_file.cpp">
+      <Filter>소스 파일\wrap_sys</Filter>
+    </ClCompile>
+    <ClCompile Include="wrap_security.cpp">
       <Filter>소스 파일\wrap_sys</Filter>
     </ClCompile>
   </ItemGroup>

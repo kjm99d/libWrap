@@ -162,10 +162,12 @@
     <ClInclude Include="..\..\src\wrap.h" />
     <ClInclude Include="..\..\src\wrap_file.h" />
     <ClInclude Include="..\..\src\wrap_image.h" />
+    <ClInclude Include="wrap_security.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\wrap_file.cpp" />
     <ClCompile Include="..\..\src\wrap_image.cpp" />
+    <ClCompile Include="wrap_security.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
