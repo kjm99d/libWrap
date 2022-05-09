@@ -1,4 +1,7 @@
 #include <stdlib.h>
+
+// ===== stb image settings ===== //
+#define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
 #pragma hdrstop
 

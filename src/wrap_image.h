@@ -18,5 +18,5 @@ typedef struct _WRAP_GIF_IMAGE : WRAP_IMAGE
 
 
 
-DLL_EXPORT bool LoadImageSingle(WRAP_IMAGE *wrap_image, const char *image_path);
-DLL_EXPORT bool LoadImageGIF(WRAP_GIF_IMAGE *wrap_gif_image, const char *image_path);
+bool LoadImageSingle(WRAP_IMAGE *wrap_image, const char *image_path);
+bool LoadImageGIF(WRAP_GIF_IMAGE *wrap_gif_image, const char *image_path);

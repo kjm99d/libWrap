@@ -1,5 +1,7 @@
 #include <stdio.h>
 #pragma hdrstop
+#pragma warning(disable:4996)
+
 
 #include "wrap_file.h"
 
@@ -10,7 +12,10 @@ WRAP_FILE::WRAP_FILE() : fd(nullptr)
 
 WRAP_FILE::~WRAP_FILE()
 {
-	fclose((FILE *)fd);
+	if (fd != NULL) {
+		fclose((FILE*)fd);
+		fd = NULL;
+	}
 }
 
 WRAP_FILE::WRAP_FILE(const char *path, WRAP_FILE_OPEN_MODE wrap_file_mode)
@@ -39,8 +44,10 @@ int WRAP_FILE::Open()
 
 int WRAP_FILE::Close()
 {
-	fclose((FILE *)fd);
-	fd = NULL;
+	if (fd != NULL) {
+		fclose((FILE*)fd);
+		fd = NULL;
+	}
 
 	return 1;
 }
@@ -109,10 +116,11 @@ const char * WRAP_FILE::wrap_open_type_to_fopen_type(WRAP_FILE_OPEN_MODE wrap_fi
 		ret = "wb";
 		break;
 	default:
+		ret = nullptr;
 		break;
 	}
 
-	return nullptr;
+	return ret;
 }
 
 bool WRAP_FILE::check_wrap_open_read_write_permission(int call_type)

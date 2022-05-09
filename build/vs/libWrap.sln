@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 15 for Windows Desktop
-VisualStudioVersion = 15.0.28307.1800
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libWrap", "libWrap.vcxproj", "{CDA72B47-D8DC-43FD-8E1B-AC12E79579B6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_application", "test_application.vcxproj", "{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CDA72B47-D8DC-43FD-8E1B-AC12E79579B6} = {CDA72B47-D8DC-43FD-8E1B-AC12E79579B6}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,14 @@ Global
 		{CDA72B47-D8DC-43FD-8E1B-AC12E79579B6}.Release|x64.Build.0 = Release|x64
 		{CDA72B47-D8DC-43FD-8E1B-AC12E79579B6}.Release|x86.ActiveCfg = Release|Win32
 		{CDA72B47-D8DC-43FD-8E1B-AC12E79579B6}.Release|x86.Build.0 = Release|Win32
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Debug|x64.ActiveCfg = Debug|x64
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Debug|x64.Build.0 = Debug|x64
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Debug|x86.ActiveCfg = Debug|Win32
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Debug|x86.Build.0 = Debug|Win32
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Release|x64.ActiveCfg = Release|x64
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Release|x64.Build.0 = Release|x64
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Release|x86.ActiveCfg = Release|Win32
+		{01B9DE92-BE04-4050-AFDE-E8DD1AA6F1AC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
