@@ -25,5 +25,17 @@ bool LoadImageGIF(WRAP_GIF_IMAGE * wrap_gif_image, const char * image_path)
 {
 	bool ret = false;
 
+	// 파일 읽어서 처리 해야함.
+#if 0
+	stbi_uc* ts = stbi_load_gif_from_memory(data, (int)size, &delays, &width, &height, &cnt_frames, &channel, 0);
+	// GIF 로딩에 실패한 경우
+	if (!ts)
+	{
+		Err_("Cannot call gif from memory");
+		return NULL;
+	}
+#endif
+
+
 	return ret;
 }

@@ -13,18 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\wrap_image">
+      <UniqueIdentifier>{867f0a97-e1be-4996-b114-027f4a28d186}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\wrap_image">
+      <UniqueIdentifier>{2ca69498-ddab-4063-bf24-36e3c88000ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\wrap_sys">
+      <UniqueIdentifier>{93aee0a3-15e8-4ed8-8174-1c13e50ca75f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\wrap_sys">
+      <UniqueIdentifier>{749f31a4-f41a-4205-9eb2-530c2d205004}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\WrapImage.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\wrap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\wrap_image.h">
+      <Filter>헤더 파일\wrap_image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\wrap_file.h">
+      <Filter>헤더 파일\wrap_sys</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\WrapImage.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="..\..\src\wrap_image.cpp">
+      <Filter>소스 파일\wrap_image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wrap_file.cpp">
+      <Filter>소스 파일\wrap_sys</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
