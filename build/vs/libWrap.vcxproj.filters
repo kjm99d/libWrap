@@ -16,39 +16,45 @@
     <Filter Include="소스 파일\wrap_image">
       <UniqueIdentifier>{867f0a97-e1be-4996-b114-027f4a28d186}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\wrap_image">
-      <UniqueIdentifier>{2ca69498-ddab-4063-bf24-36e3c88000ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\wrap_sys">
-      <UniqueIdentifier>{93aee0a3-15e8-4ed8-8174-1c13e50ca75f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\wrap_sys">
+    <Filter Include="소스 파일\wrap_system">
       <UniqueIdentifier>{749f31a4-f41a-4205-9eb2-530c2d205004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\wrap_image">
+      <UniqueIdentifier>{98a0b7b5-edf0-473d-8cc7-7cbeeeb68747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\wrap_system">
+      <UniqueIdentifier>{984460a0-4642-4641-9bd9-130667cce3f0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\wrap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\wrap_image.h">
+    <ClInclude Include="..\..\src\wrap_image\wrap_image.h">
       <Filter>헤더 파일\wrap_image</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\wrap_file.h">
-      <Filter>헤더 파일\wrap_sys</Filter>
+    <ClInclude Include="..\..\src\wrap_system\wrap_file.h">
+      <Filter>헤더 파일\wrap_system</Filter>
     </ClInclude>
-    <ClInclude Include="wrap_security.h">
-      <Filter>헤더 파일\wrap_image</Filter>
+    <ClInclude Include="..\..\src\wrap_system\wrap_security.h">
+      <Filter>헤더 파일\wrap_system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\wrap_system\wrap_utils.h">
+      <Filter>헤더 파일\wrap_system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\wrap_image.cpp">
+    <ClCompile Include="..\..\src\wrap_image\wrap_image.cpp">
       <Filter>소스 파일\wrap_image</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\wrap_file.cpp">
-      <Filter>소스 파일\wrap_sys</Filter>
+    <ClCompile Include="..\..\src\wrap_system\wrap_file.cpp">
+      <Filter>소스 파일\wrap_system</Filter>
     </ClCompile>
-    <ClCompile Include="wrap_security.cpp">
-      <Filter>소스 파일\wrap_sys</Filter>
+    <ClCompile Include="..\..\src\wrap_system\wrap_security.cpp">
+      <Filter>소스 파일\wrap_system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\wrap_system\wrap_utils.cpp">
+      <Filter>소스 파일\wrap_system</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
