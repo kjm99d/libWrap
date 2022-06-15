@@ -36,7 +36,7 @@ int WRAP_FILE::Open()
 	if (fd) 
 	{
 		ret = 1;
-		file_byte_size = get_file_byte_size();
+		//file_byte_size = get_file_byte_size();
 	}
 
 	return ret;
@@ -127,7 +127,7 @@ bool WRAP_FILE::check_wrap_open_read_write_permission(int call_type)
 {
 	bool ret = false;
 
-	if (mode == (call_type && mode)) {
+	if (mode == (call_type & mode)) {
 		ret = true;
 	}
 
