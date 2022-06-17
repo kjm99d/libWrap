@@ -164,12 +164,14 @@
     <ClInclude Include="..\..\src\wrap_system\wrap_file.h" />
     <ClInclude Include="..\..\src\wrap_system\wrap_security.h" />
     <ClInclude Include="..\..\src\wrap_system\wrap_utils.h" />
+    <ClInclude Include="wrap_memory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\wrap_image\wrap_image.cpp" />
     <ClCompile Include="..\..\src\wrap_system\wrap_file.cpp" />
     <ClCompile Include="..\..\src\wrap_system\wrap_security.cpp" />
     <ClCompile Include="..\..\src\wrap_system\wrap_utils.cpp" />
+    <ClCompile Include="wrap_memory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

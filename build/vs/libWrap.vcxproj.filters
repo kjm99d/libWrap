@@ -25,6 +25,12 @@
     <Filter Include="헤더 파일\wrap_system">
       <UniqueIdentifier>{984460a0-4642-4641-9bd9-130667cce3f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\wrap_memory">
+      <UniqueIdentifier>{802c544b-765a-4b8d-9389-01558c9cf476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\wrap_memory">
+      <UniqueIdentifier>{fd8922b2-1605-4d32-9fa8-8d2557b8ec60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\wrap.h">
@@ -42,6 +48,9 @@
     <ClInclude Include="..\..\src\wrap_system\wrap_utils.h">
       <Filter>헤더 파일\wrap_system</Filter>
     </ClInclude>
+    <ClInclude Include="wrap_memory.h">
+      <Filter>헤더 파일\wrap_memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\wrap_image\wrap_image.cpp">
@@ -55,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\wrap_system\wrap_utils.cpp">
       <Filter>소스 파일\wrap_system</Filter>
+    </ClCompile>
+    <ClCompile Include="wrap_memory.cpp">
+      <Filter>소스 파일\wrap_memory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
