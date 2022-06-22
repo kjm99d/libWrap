@@ -1,6 +1,10 @@
 #include <iostream>
+#include <mutex>
 #pragma hdrstop
+
 #include "SocketServer.h"
+
+std::mutex singleton;
 
 void SocketServer::Listen()
 {
@@ -8,31 +12,51 @@ void SocketServer::Listen()
 		ErrorHandling("listen() error");
 }
 
-void SocketServer::Accept()
+bool SocketServer::Accept()
 {
-
 	szClntAddr = sizeof(clntAddr);
 
 	hClntSock = accept(hServSock, (SOCKADDR*)&clntAddr, &szClntAddr); //클라이언트 연결요청 수락하기 위해 accept함수 호출
 
-	if (hClntSock == INVALID_SOCKET)
-		ErrorHandling("accept() error");
+	if (hClntSock == INVALID_SOCKET) return false;
+		//ErrorHandling("accept() error");
 
 	clients.push(hClntSock);
+	printf("clients = 0x%X \n", &clients);
 
+
+	return true;
 }
 
-void SocketServer::Send(const char* msg)
+void SocketServer::SendPtr(void* c, int size)
+{
+	int i;
+	printf("clients = 0x%X \n", &clients);
+	int len_clients = clients.size();
+	for (i = 0; i < len_clients; ++i) {
+		SOCKET& client = clients.front();
+		clients.pop();
+		send(client, (const char *)c, sizeof(unsigned char) * size, 0); //send함수 호출을 통해서 연결된 클라이언트에 데이터를 전송
+		clients.push(client);
+		
+	}
+}
+#if 0
+void SocketServer::Send(const char* c, int size)
 {
 	int i;
 	int len_clients = clients.size();
 	for (i = 0; i < len_clients; ++i) {
 		SOCKET& client = clients.front();
 		clients.pop();
-		send(client, msg, sizeof(msg), 0); //send함수 호출을 통해서 연결된 클라이언트에 데이터를 전송
+		send(client, c, sizeof(char) * size, 0); //send함수 호출을 통해서 연결된 클라이언트에 데이터를 전송
 		clients.push(client);
-		
+
 	}
+}
+#endif
+void SocketServer::Send2()
+{
 }
 
 void SocketServer::Recv()
@@ -41,6 +65,7 @@ void SocketServer::Recv()
 
 void SocketServer::Close()
 {
+	printf("Close \n");
 	int len_clients = clients.size();
 	while (clients.size()) {
 		SOCKET& client = clients.front();
@@ -53,10 +78,11 @@ void SocketServer::Close()
 void SocketServer::Free()
 {
 	Terminated = true;
-	m.lock();
+	printf("Free Start \n");
 
 	closesocket(hServSock);
 	WSACleanup();
+	printf("Free End \n");
 }
 
 bool SocketServer::is_terminate()
@@ -129,4 +155,35 @@ void SocketServer::Init(const int c_port)
 	{
 		ErrorHandling("bind() error");
 	}
+}
+
+Management& Management::GetInstance()
+{
+
+	static Management* server = NULL;
+	if (server == NULL) {
+		server = new Management();
+	}
+	return (*server);
+}
+
+void Management::SendAll(std::string str)
+{
+	//unsigned char t[] = { 65,65, '\n' };
+	//Send(str.c_str(), str.size());
+	SendPtr((void *)str.c_str(), str.size());
+
+}
+
+void Management::SendUnique(int id, std::string str)
+{
+	const SOCKET client = u.at(id).socket;		
+	send(client, str.c_str(), sizeof(const char) * str.size(), 0); //send함수 호출을 통해서 연결된 클라이언트에 데이터를 전송
+
+}
+
+void Management::PrintMember()
+{
+	SocketServer::PrintMember();
+	printf("Chi Clients = 0x%X \n", &clients);
 }
